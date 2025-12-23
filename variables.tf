@@ -27,13 +27,13 @@ variable "admin_cidr" { #TODO: check if needed or use 0.0.0.0/0
 }
 
 variable "private_subnet_cidr" {
-    type        = string
-    description = "CIDR range for the private subnet"
+  type        = string
+  description = "CIDR range for the private subnet"
 }
 
 variable "public_subnet_cidr" {
-    type        = string
-    description = "CIDR range for the public subnet"
+  type        = string
+  description = "CIDR range for the public subnet"
 }
 
 variable "ssh_user" {
@@ -57,10 +57,4 @@ variable "k3s_machine_type" {
   type        = string
   description = "K3s VM machine type"
   default     = "e2-medium"
-}
-
-variable "k3s_disk_gb" {
-  type        = number
-  description = "Boot disk size for K3s VM"
-  default     = 20
 }

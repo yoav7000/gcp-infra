@@ -31,7 +31,7 @@ resource "google_compute_instance" "k3s" {
   boot_disk {
     initialize_params {
       image = "projects/debian-cloud/global/images/family/debian-12"
-      size  = var.k3s_disk_gb
+      size  = 20
       type  = "pd-balanced"
     }
   }
