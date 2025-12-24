@@ -6,7 +6,7 @@ resource "google_compute_instance" "bastion" {
 
   boot_disk {
     initialize_params {
-      image = "projects/debian-cloud/global/images/family/debian-12"
+      image = "projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts"
       size  = 10
       type  = "pd-standard"
     }
@@ -30,7 +30,7 @@ resource "google_compute_instance" "k3s" {
 
   boot_disk {
     initialize_params {
-      image = "projects/debian-cloud/global/images/family/debian-12"
+      image = "projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts"
       size  = 20
       type  = "pd-balanced"
     }

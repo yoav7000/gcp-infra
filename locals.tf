@@ -8,7 +8,7 @@ locals {
   public_subnet_cidr = "10.100.1.0/24"
   private_subnet_cidr = "10.100.2.0/24"
 
-  ssh_public_key_path = "C:\\YoavWork/vms-keys.pub"
+  ssh_public_key_path = "C:\\YoavWork/new-gcp-keys.pub"
   ssh_user = "yoav"
   bastion_machine_type = "e2-micro"
   k3s_machine_type = "e2-medium"
