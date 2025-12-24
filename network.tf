@@ -6,12 +6,12 @@ resource "google_compute_network" "vpc" {
 
 resource "google_compute_subnetwork" "public-subnet" {
   name          = local.public_subnet_name
-  ip_cidr_range = var.public_subnet_cidr
+  ip_cidr_range = local.public_subnet_cidr
   network       = google_compute_network.vpc.id
 }
 
 resource "google_compute_subnetwork" "private-subnet" {
   name          = local.private_subnet_name
-  ip_cidr_range = var.private_subnet_cidr
+  ip_cidr_range = local.private_subnet_cidr
   network       = google_compute_network.vpc.id
 }

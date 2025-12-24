@@ -1,10 +1,10 @@
 resource "google_compute_router" "router" {
-  name    = "${var.name_prefix}-router"
+  name    = "${local.name_prefix}-router"
   network = google_compute_network.vpc.id
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "${var.name_prefix}-nat"
+  name   = "${local.name_prefix}-nat"
   router = google_compute_router.router.name
 
   nat_ip_allocate_option = "AUTO_ONLY" # Allocate NAT external IPs automatically

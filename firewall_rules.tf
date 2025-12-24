@@ -1,10 +1,10 @@
 resource "google_compute_firewall" "allow_ssh_to_bastion" {
-  name    = "${var.name_prefix}-allow-ssh-to-bastion"
+  name    = "${local.name_prefix}-allow-ssh-to-bastion"
   network = google_compute_network.vpc.name
 
   direction     = "INGRESS"
   priority      = 1000
-  source_ranges = [var.admin_cidr]
+  source_ranges = [local.admin_cidr]
   target_tags   = [local.bastion_tag]
 
   allow {
@@ -14,7 +14,7 @@ resource "google_compute_firewall" "allow_ssh_to_bastion" {
 }
 
 resource "google_compute_firewall" "allow_bastion_to_k3s_ssh" {
-  name    = "${var.name_prefix}-allow-bastion-to-k3s-ssh"
+  name    = "${local.name_prefix}-allow-bastion-to-k3s-ssh"
   network = google_compute_network.vpc.name
 
   direction   = "INGRESS"

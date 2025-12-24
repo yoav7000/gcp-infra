@@ -1,7 +1,7 @@
 resource "google_compute_instance" "bastion" {
-  name         = "${var.name_prefix}-bastion"
-  machine_type = var.bastion_machine_type
-  zone         = var.zone
+  name         = "${local.name_prefix}-bastion"
+  machine_type = local.bastion_machine_type
+  zone         = local.zone
   tags         = [local.bastion_tag]
 
   boot_disk {
@@ -23,9 +23,9 @@ resource "google_compute_instance" "bastion" {
 }
 
 resource "google_compute_instance" "k3s" {
-  name         = "${var.name_prefix}-k3s"
-  machine_type = var.k3s_machine_type
-  zone         = var.zone
+  name         = "${local.name_prefix}-k3s"
+  machine_type = local.k3s_machine_type
+  zone         = local.zone
   tags         = [local.k3s_tag]
 
   boot_disk {
