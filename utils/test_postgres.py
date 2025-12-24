@@ -6,8 +6,9 @@ conn = psycopg2.connect(
     port=5432,
     dbname="app",
     user="app",
-    password="4sGOKtXjs1tY4AjLVRBTUULoIesvJ2ArRg2S0xgyKzTIrP3VhmvEtjXR34pKSva1",
+    password="7HGcfAsfYU6AUCC5LQYLNWPOEHjSgERInW75vpGx0o9J1NNTjpIlbr2gA6WUIwvm",
     connect_timeout=5,
+
 )
 cur = conn.cursor()
 cur.execute("SELECT 1;")
